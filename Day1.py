@@ -10,106 +10,117 @@ def getFuelReqNew(mass):
 		mass = math.floor(mass / 3) - 2
 	return fuelReq
 
-totalFuel = \
-getFuelReq(53247) + \
-getFuelReq(140268) + \
-getFuelReq(139961) + \
-getFuelReq(87816) + \
-getFuelReq(102986) + \
-getFuelReq(122415) + \
-getFuelReq(140484) + \
-getFuelReq(56099) + \
-getFuelReq(52832) + \
-getFuelReq(56999) + \
-getFuelReq(122823) + \
-getFuelReq(130608) + \
-getFuelReq(83149) + \
-getFuelReq(144224) + \
-getFuelReq(104559) + \
-getFuelReq(108523) + \
-getFuelReq(126571) + \
-getFuelReq(137284) + \
-getFuelReq(83197) + \
-getFuelReq(109996) + \
-getFuelReq(56795) + \
-getFuelReq(73112) + \
-getFuelReq(50043) + \
-getFuelReq(130097) + \
-getFuelReq(113563) + \
-getFuelReq(91200) + \
-getFuelReq(130589) + \
-getFuelReq(83725) + \
-getFuelReq(108625) + \
-getFuelReq(131977) + \
-getFuelReq(95213) + \
-getFuelReq(149800) + \
-getFuelReq(70756) + \
-getFuelReq(86240) + \
-getFuelReq(134854) + \
-getFuelReq(148919) + \
-getFuelReq(114460) + \
-getFuelReq(95062) + \
-getFuelReq(122989) + \
-getFuelReq(57274) + \
-getFuelReq(112074) + \
-getFuelReq(139530) + \
-getFuelReq(131217) + \
-getFuelReq(55652) + \
-getFuelReq(125522) + \
-getFuelReq(77304) + \
-getFuelReq(144873) + \
-getFuelReq(86811) + \
-getFuelReq(107768) + \
-getFuelReq(70704) + \
-getFuelReq(146300) + \
-getFuelReq(87256) + \
-getFuelReq(118752) + \
-getFuelReq(52585) + \
-getFuelReq(126269) + \
-getFuelReq(124559) + \
-getFuelReq(52592) + \
-getFuelReq(112097) + \
-getFuelReq(123090) + \
-getFuelReq(101778) + \
-getFuelReq(136424) + \
-getFuelReq(74547) + \
-getFuelReq(119337) + \
-getFuelReq(143570) + \
-getFuelReq(113426) + \
-getFuelReq(146458) + \
-getFuelReq(88135) + \
-getFuelReq(100236) + \
-getFuelReq(148224) + \
-getFuelReq(98718) + \
-getFuelReq(135181) + \
-getFuelReq(56608) + \
-getFuelReq(109671) + \
-getFuelReq(144027) + \
-getFuelReq(135192) + \
-getFuelReq(111620) + \
-getFuelReq(69411) + \
-getFuelReq(107957) + \
-getFuelReq(88448) + \
-getFuelReq(64972) + \
-getFuelReq(63010) + \
-getFuelReq(100625) + \
-getFuelReq(96144) + \
-getFuelReq(61998) + \
-getFuelReq(59813) + \
-getFuelReq(124503) + \
-getFuelReq(64306) + \
-getFuelReq(73119) + \
-getFuelReq(77094) + \
-getFuelReq(136295) + \
-getFuelReq(132224) + \
-getFuelReq(125713) + \
-getFuelReq(110137) + \
-getFuelReq(51478) + \
-getFuelReq(90272) + \
-getFuelReq(133506) + \
-getFuelReq(72218) + \
-getFuelReq(100082) + \
-getFuelReq(106377) + \
-getFuelReq(140290)
+puzzleInput = [
+		53247,
+		140268,
+		139961,
+		87816,
+		102986,
+		122415,
+		140484,
+		56099,
+		52832,
+		56999,
+		122823,
+		130608,
+		83149,
+		144224,
+		104559,
+		108523,
+		126571,
+		137284,
+		83197,
+		109996,
+		56795,
+		73112,
+		50043,
+		130097,
+		113563,
+		91200,
+		130589,
+		83725,
+		108625,
+		131977,
+		95213,
+		149800,
+		70756,
+		86240,
+		134854,
+		148919,
+		114460,
+		95062,
+		122989,
+		57274,
+		112074,
+		139530,
+		131217,
+		55652,
+		125522,
+		77304,
+		144873,
+		86811,
+		107768,
+		70704,
+		146300,
+		87256,
+		118752,
+		52585,
+		126269,
+		124559,
+		52592,
+		112097,
+		123090,
+		101778,
+		136424,
+		74547,
+		119337,
+		143570,
+		113426,
+		146458,
+		88135,
+		100236,
+		148224,
+		98718,
+		135181,
+		56608,
+		109671,
+		144027,
+		135192,
+		111620,
+		69411,
+		107957,
+		88448,
+		64972,
+		63010,
+		100625,
+		96144,
+		61998,
+		59813,
+		124503,
+		64306,
+		73119,
+		77094,
+		136295,
+		132224,
+		125713,
+		110137,
+		51478,
+		90272,
+		133506,
+		72218,
+		100082,
+		106377,
+		140290,
+]
 
-print(totalFuel)
+# Part 1 solution
+sum1 = 0
+for mass in puzzleInput:
+	sum1 += getFuelReq(mass)
+print("Part 1 solution:", sum1)
+
+# Part 2 solution
+sum2 = 0
+for mass in puzzleInput:
+	sum2 += getFuelReqNew(mass)
+print("Part 2 solution:", sum2)
