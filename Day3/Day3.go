@@ -128,17 +128,49 @@ func main() {
 		}
 	}
 
-	//fmt.Println(w1Path)
-
 	var intersectionDistances[]int
+	var intersectionCoords[][]int
 	for i := range w1Path {
 		for j := range w2Path {
 			if (w1Path[i][0] == w2Path[j][0] && w1Path[i][1] == w2Path[j][1]) {
 				intersectionDistances = append(intersectionDistances, getAbs(w1Path[i][0]) + getAbs(w1Path[i][1]))
+				intersectionCoords = append(intersectionCoords, []int{w1Path[i][0], w1Path[i][1]})
 			}
 		}
 	}
+
 	fmt.Println("Part 1 Solution:")
 	fmt.Println(getMin(intersectionDistances))
-	
+
+	// For part 2 we must get the fewest combined steps the wires must take to reach an intersection.
+	fewestCombinedSteps := 1000000000000
+	for i := range intersectionCoords {
+		// Get number of steps till the intersection coordinates
+		w1numSteps := 0 //w1numSteps is the index we are iterating over as well as a counter
+		for {
+			if ((w1Path[w1numSteps][0] == intersectionCoords[i][0]) && (w1Path[w1numSteps][1] == intersectionCoords[i][1])) {
+				w1numSteps = w1numSteps + 1
+				break
+			}
+			w1numSteps = w1numSteps + 1
+		}
+
+		w2numSteps := 0
+		for {
+			if ((w2Path[w2numSteps][0] == intersectionCoords[i][0]) && (w2Path[w2numSteps][1] == intersectionCoords[i][1])) {
+				w2numSteps = w2numSteps + 1
+				break
+			}
+			w2numSteps = w2numSteps + 1
+		}
+
+		combinedSteps := w1numSteps + w2numSteps
+		if (combinedSteps < fewestCombinedSteps) {
+			fewestCombinedSteps = combinedSteps
+		}
+	}
+
+	fmt.Println("Part 2 Solution:")
+	fmt.Println(fewestCombinedSteps)
+
 }
