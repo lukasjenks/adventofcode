@@ -10,3 +10,7 @@ Languages used so far:
 Day 1: Python
 
 Day 2: Common Lisp (Implementation used to test: Allegro Common Lisp)
+
+Day 3: Golang
+
+Day 4: C
