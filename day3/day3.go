@@ -172,5 +172,4 @@ func main() {
 
 	fmt.Println("Part 2 Solution:")
 	fmt.Println(fewestCombinedSteps)
-
 }
