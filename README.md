@@ -14,3 +14,5 @@ Day 2: Common Lisp (Implementation used to test: Allegro Common Lisp)
 Day 3: Golang
 
 Day 4: C
+
+Day 5: Common Lisp (Implementation used to test: SBCL)
